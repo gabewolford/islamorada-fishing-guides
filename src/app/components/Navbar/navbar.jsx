@@ -11,7 +11,8 @@ export default function Navbar() {
   const location = usePathname();
   console.log(location)
   const inactiveColorClass = 'text-navgrey-420';
-  const excludedPaths = ['/', '/charters', '/charters/inshore-backcountry', '/charters/offshore', '/charters/eco-enviro-tours'];
+  const chartersExcludedPaths = ['/', '/charters', '/charters/inshore-backcountry', '/charters/offshore', '/charters/eco-enviro-tours'];
+  const contactExcludedPaths = ['/', '/contact', '/contact/confirmation'];
 
   useLayoutEffect(() => {
     const handleResize = () => {
@@ -61,7 +62,7 @@ export default function Navbar() {
             <div className="flex flex-col gap-y-4 gap-x-0 mt-5 sm:flex-row sm:items-center sm:justify-end sm:gap-y-0 sm:gap-x-7 sm:mt-0 sm:pl-7">
               <div className="hs-dropdown [--strategy:static] sm:[--strategy:fixed] [--adaptive:none] sm:[--trigger:hover] sm:py-4">
                   <button type="button" className={`flex items-center w-full  hover:text-cyan-420 medium
-                  ${!excludedPaths.includes(location) && inactiveColorClass}`
+                  ${!chartersExcludedPaths.includes(location) && inactiveColorClass}`
                 }
                   >
                     Charters
@@ -123,7 +124,7 @@ export default function Navbar() {
                 </Link>
 
                 <Link 
-                  className={`medium hover:text-cyan-420 sm:py-6 ${(location !== '/contact' && location !== '/') && inactiveColorClass}`}
+                  className={`medium hover:text-cyan-420 sm:py-6 ${!contactExcludedPaths.includes(location) && inactiveColorClass}`}
                   href="/contact" 
                   {...(isSmallScreen && {
                     'data-hs-collapse': '#navbar-collapse-with-animation',
