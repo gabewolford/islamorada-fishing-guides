@@ -1,31 +1,6 @@
-'use client'
-
 import Link from "next/link";
-import Image from "next/image";
-import { useEffect } from "react";
 
 export default function PhotoLeftCard() {
-
-    useEffect(() => {
-        const cards = document.querySelectorAll('.fade-in')
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                entry.target.classList.toggle('show', entry.isIntersecting)
-                if (entry.isIntersecting) {
-                    observer.unobserve(entry.target)
-                }
-            })
-        },
-        {
-            threshold: .25,
-        }
-        )
-    
-        cards.forEach(card => {
-            observer.observe(card)
-        })
-    }, [])
-
     return (
         <>
             <div className="fade-in show flex flex-col md:flex-row items-center gap-6 lg:gap-28 order-1 mx-6 lg:mx-20 mb-16">
