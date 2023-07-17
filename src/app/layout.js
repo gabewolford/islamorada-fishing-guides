@@ -3,7 +3,8 @@
 import './globals.css'
 import { useEffect } from 'react'
 import { Analytics } from '@vercel/analytics/react'
-import Navbar from './components/Navbar/page'
+import Navbar from './components/Navbar/navbar'
+import Footer from './components/Footer/footer'
 
 export default function RootLayout({ children }) {
   useEffect(() => {
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
       <body>
         <Navbar />
         {children}
+        <Footer />
         <Analytics />
       </body>
     </html>
