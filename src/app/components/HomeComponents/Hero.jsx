@@ -4,13 +4,16 @@ import Image from 'next/image'
 export default function Hero() {
     return (
         <>
-            <div className="flex flex-col-reverse md:flex-row items-center gap-6 order-1 mb-16 md:mx-6 lg:mx-20 pt-16 md:pt-24">
-                <div className="flex order-1 md:w-1/2">
+            <div className="flex flex-col-reverse md:flex-row items-center gap-6 order-1 mb-16 md:mx-6 lg:mx-20">
+                <div className="flex order-1 w-full md:w-1/2">
                     <Image
                         src="/images/hero-image-home.png"
-                        height={536}
-                        width={536}
+                        height={700}
+                        width={700}
+                        style={{ width: '100%', height: 'auto' }}
+                        sizes="100vw"
                         alt='Home hero image'
+                        priority={true}
                     >
                     </Image>
                 </div>
