@@ -1,27 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@font-face {
+    font-family: 'apercu-bold-pro';
+    src: url('/fonts/apercu-bold-pro.woff2') format('woff2'),
+        url('/fonts/apercu-bold-pro.woff') format('woff'),
+        url('/fonts/apercu-bold-pro.ttf') format('truetype');
+    font-weight: 700;
+    font-display: swap;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'apercu-medium-pro';
+    src: url('/fonts/apercu-medium-pro.woff2') format('woff2'),
+        url('/fonts/apercu-medium-pro.woff') format('woff'),
+        url('/fonts/apercu-medium-pro.ttf') format('truetype');
+    font-weight: 500;
+    font-display: swap;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'apercu-regular-pro';
+    src: url('/fonts/apercu-regular-pro.woff2') format('woff2'),
+        url('/fonts/apercu-regular-pro.woff') format('woff'),
+        url('/fonts/apercu-regular-pro.ttf') format('truetype');
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #073050;
+    font-family: 'apercu-regular-pro', 'Inter', sans-serif;
+}
+
+.bold {
+    font-family: 'apercu-bold-pro', 'Inter', sans-serif;
+}
+
+.medium {
+    font-family: 'apercu-medium-pro', 'Inter', sans-serif;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    position: relative;
+    min-height: 100vh;
+}
+
+.boat-list-item {
+    list-style: none;
+}
+
+.hover-grow {
+    transition: 500ms;
+}
+
+.hover-grow:hover {
+    scale: 1.05;
+}
+
+.fade-in {
+    opacity: 0;
+    transition: 700ms;
+  }
+  
+  .fade-in.show {
+    opacity: 1;
+  }
+
+@media only screen and (min-width: 300px) {
+    body {
+        padding-bottom: 830px;
+    }
+}
+
+@media only screen and (min-width: 1028px) {
+    body {
+        padding-bottom: 650px;
+    }
 }

@@ -1,18 +1,36 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
+    'node_modules/preline/dist/*.js',
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
+      colors: {
+        cyan: {
+          420: '#136F8C',
+          69: '#113C5D',
+          666: '#073050',
+          'hover': '#20ADDA'
+        },
+        offshore: {
+          420: '#274F9F',
+        },
+        backcountry: {
+          420: '#05AD9D',
+        },
+        muted: {
+          420: '#999BAF',
+        },
+        navgrey: {
+          420: '#536879',
+        },
+      }
     },
   },
-  plugins: [],
+  plugins: [
+    require('preline/plugin'),
+  ],
 }
