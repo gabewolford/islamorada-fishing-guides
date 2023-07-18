@@ -9,7 +9,6 @@ export default function Navbar() {
   const [isSmallScreen, setisSmallScreen] = useState(false);
   
   const location = usePathname();
-  console.log(location)
   const inactiveColorClass = 'text-navgrey-420';
   const chartersExcludedPaths = ['/', '/charters', '/charters/inshore-backcountry', '/charters/offshore', '/charters/eco-enviro-tours'];
   const contactExcludedPaths = ['/', '/contact', '/contact/confirmation'];
