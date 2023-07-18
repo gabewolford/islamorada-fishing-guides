@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from "react"
-import BreadcrumbsAndDetails from "../../components/GuidesComponents/BreadCrumbsAndDetails"
+import BreadcrumbsAndDetails from "../../components/GuidesComponents/BreadcrumbsAndDetails"
 import GuideFacts from "../../components/GuidesComponents/GuideFacts"
 import { useParams } from "next/navigation"
 
