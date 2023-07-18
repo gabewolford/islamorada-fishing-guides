@@ -1,10 +1,14 @@
+'use client'
+
 import Link from "next/link"
 
-export default function GuideCard({ guideData, setDetailPage }) {
+export default function GuideCard({ guideData }) {
+
+    
     let guideName, guidePhoto, badges
     if (guideData) {
         guideName = <h3 className="text-md mt-2 text-center bold">Capt. {guideData.name}</h3>
-        guidePhoto = '..' + guideData.featured_pic
+        guidePhoto = guideData.featured_pic
         if (guideData.backcountry === true && guideData.offshore === true) {
             badges = <h5 className="text-center">
                         <span className="text-center text-xs bg-offshore-420 text-white px-2 mr-1 py-1 rounded-full">Offshore</span> 
@@ -21,22 +25,14 @@ export default function GuideCard({ guideData, setDetailPage }) {
         }
     }
 
-    function handleLinkClick() {
-        setDetailPage(guideData)
-    }
-
     return (
         <Link 
             href={`/guides/${guideData.slug}`}
             className="p-4 hover-grow"
         >
-            <a
-             onClick={handleLinkClick}
-            >
-                <img src={guidePhoto} alt={guideName}/>
+            <img src={guidePhoto} alt={guideData.name}/>
                 {guideName}
                 {badges}
-            </a>
         </Link>
     )
 }

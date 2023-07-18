@@ -196,18 +196,18 @@ export default function GuidesPage() {
           days_off: "Practicing Brazilian jiu-jitsu, crossfit, or you can catch me throwing the fly and getting rejected by the permit on the flat."
         },
         {
-            name: 'Lance Keene',
-            slug: 'lance-keene',
-            featured_pic: '/images/captains/lance-keene.png',
-            backcountry: true,
-            offshore: false,
-            business_name: 'Steelhead Hunter Charters',
-            about_me: "I'm a full-time fishing guide half the season in the Florida Keys, and the other half in Michigan chasing salmon and steelhead.",
-            boats: ['2400 Bay Ranger w/ 250HP Yamaha'],
-            dock: 'World Wide Sportsman',
-            specialty: 'Snapper, snook, tarpon, permit',
-            fun_fact: "I like to fish bass tournaments in Northern Michigan.",
-            days_off: "I still spend time on the water trying new techniques, catching bait, or just trying to catch fish for myself."
+          name: 'Lance Keene',
+          slug: 'lance-keene',
+          featured_pic: '/images/captains/lance-keene.png',
+          backcountry: true,
+          offshore: false,
+          business_name: 'Steelhead Hunter Charters',
+          about_me: "I'm a full-time fishing guide half the season in the Florida Keys, and the other half in Michigan chasing salmon and steelhead.",
+          boats: ['2400 Bay Ranger w/ 250HP Yamaha'],
+          dock: 'World Wide Sportsman',
+          specialty: 'Snapper, snook, tarpon, permit',
+          fun_fact: "I like to fish bass tournaments in Northern Michigan.",
+          days_off: "I still spend time on the water trying new techniques, catching bait, or just trying to catch fish for myself."
         },
         {
           name: 'Steve Lavoie',
@@ -284,7 +284,7 @@ export default function GuidesPage() {
     let guidesList 
     if (allGuides.length > 0) {
       guidesList = guides
-        .map((guide, i) => <GuideCard key={i} guideData={guide} detailPage={detailPage} setDetailPage={setDetailPage}/>)
+        .map((guide, i) => <GuideCard key={i} guideData={guide} setDetailPage={setDetailPage}/>)
     }
 
     return (
