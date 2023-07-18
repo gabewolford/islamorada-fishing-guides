@@ -30,11 +30,17 @@ export default function HomePage() {
   }, [])
 
   return (
-    <div className="mx-auto max-w-7xl pt-4 md:pt-24 animate__animated animate__fadeIn">
-      <Hero />
-      <CharterTypes />
-      <PhotoLeftCard />
-      <PhotoRightCard />
-    </div>
+    <>
+      <head>
+        <title>Islamorada Fishing Guides & Charters</title>
+        <link rel="icon" href="/images/tan-favicon.png"/>
+      </head>
+      <div className="mx-auto max-w-7xl pt-4 md:pt-24 animate__animated animate__fadeIn">
+        <Hero />
+        <CharterTypes />
+        <PhotoLeftCard />
+        <PhotoRightCard />
+      </div>
+    </>
   )
 }

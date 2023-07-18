@@ -28,13 +28,19 @@ export default function AllChartersPage() {
     }, [])
 
     return (
-        <div className="mx-auto max-w-7xl pt-16 md:pt-24 pb-12 md:pb-0 animate__animated animate__fadeIn">
-            <div className="mx-6 lg:mx-20 mb-0 md:mb-8">
-                <Breadcrumbs />
-                <PhotoLeftCard1 />
-                <PhotoRightCard2 />
-                <PhotoLeftCard3 />
+        <>
+            <head>
+                <title>Islamorada Fishing Guides | All Charters</title>
+                <link rel="icon" href="/images/tan-favicon.png"/>
+            </head>
+            <div className="mx-auto max-w-7xl pt-16 md:pt-24 pb-12 md:pb-0 animate__animated animate__fadeIn">
+                <div className="mx-6 lg:mx-20 mb-0 md:mb-8">
+                    <Breadcrumbs />
+                    <PhotoLeftCard1 />
+                    <PhotoRightCard2 />
+                    <PhotoLeftCard3 />
+                </div>
             </div>
-        </div>
+        </>
     )      
 }

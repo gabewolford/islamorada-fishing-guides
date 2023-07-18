@@ -31,6 +31,10 @@ export default function InshoreBackcountryPage() {
 
     return (
         <>
+            <head>
+                <title>Islamorada Fishing Guides | Backcountry Charters</title>
+                <link rel="icon" href="/images/tan-favicon.png"/>
+            </head>
             <div className="mx-auto max-w-7xl pt-16 md:pt-24 animate__animated animate__fadeIn">
                 <div className="mx-6 lg:mx-20 mb-0 md:mb-8">
                     <Breadcrumbs />
@@ -40,8 +44,6 @@ export default function InshoreBackcountryPage() {
                     <PhotoRightCard4 />
                 </div>
             </div>
-            
-    
         </>
     )      
 }

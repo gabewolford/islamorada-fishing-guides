@@ -307,11 +307,17 @@ export default function GuideDetailsPage() {
     }, [slug, guides, detailPage, setDetailPage]);
 
   return (
+      <>
+      <head>
+          <title>Islamorada Fishing Guides | Guide Details</title>
+          <link rel="icon" href="/images/tan-favicon.png"/>
+      </head>
       <div className="mx-auto max-w-7xl pt-16 md:pt-24 animate__animated animate__fadeIn">
           <div className="mx-6 lg:mx-20 mb-16">
               <BreadcrumbsAndDetails guideData={detailPage} />
               <GuideFacts guideData={detailPage} />
           </div>
       </div>
+    </>
   )
 }

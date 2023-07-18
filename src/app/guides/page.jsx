@@ -288,13 +288,19 @@ export default function GuidesPage() {
     }
 
     return (
-        <div className="mx-auto max-w-7xl pt-16 md:pt-24 animate__animated animate__fadeIn">
-            <div className="mx-6 lg:mx-20 mb-16">
-              <Breadcrumbs />
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-                  {guidesList}
+      <>
+        <head>
+            <title>Islamorada Fishing Guides | Our Guides</title>
+            <link rel="icon" href="/images/tan-favicon.png"/>
+        </head>
+          <div className="mx-auto max-w-7xl pt-16 md:pt-24 animate__animated animate__fadeIn">
+              <div className="mx-6 lg:mx-20 mb-16">
+                <Breadcrumbs />
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+                    {guidesList}
+                </div>
               </div>
-            </div>
-        </div> 
+          </div> 
+        </>
     )
 }
