@@ -21,15 +21,22 @@ export default function GuideCard({ guideData, setDetailPage }) {
         }
     }
 
+    function handleLinkClick() {
+        setDetailPage(guideData)
+    }
+
     return (
         <Link 
             href={`/guides/${guideData.slug}`}
-            onClick={() => setDetailPage(guideData)}
             className="p-4 hover-grow"
         >
-            <img src={guidePhoto} alt={guideName}/>
-            {guideName}
-            {badges}
+            <a
+             onClick={handleLinkClick}
+            >
+                <img src={guidePhoto} alt={guideName}/>
+                {guideName}
+                {badges}
+            </a>
         </Link>
     )
 }
