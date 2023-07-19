@@ -1,40 +1,23 @@
-'use client'
-
-import { useEffect } from 'react'
+import Observer from './components/utils/Observer'
 import Hero from './components/HomeComponents/Hero'
 import CharterTypes from './components/HomeComponents/CharterTypes'
 import PhotoLeftCard from './components/HomeComponents/PhotoLeftCard'
 import PhotoRightCard from './components/HomeComponents/PhotoRightCard'
 
+export const metadata = {
+  title: "Islamorada Fishing Guides & Charters | Florida Keys",
+  icons: {
+    icon: "/images/tan-favicon.png"
+  },
+  description: "Experience the ultimate Florida Keys fishing adventure. Fish with the experts of Islamorada in the backcountry waters of the Florida Bay or the offshore blue waters of the Gulf Stream.",
+  keywords: "florida keys, islamorada, florida, fishing, sport fishing, sportfishing, guides, charters, fishing charters, fishing guides, tours, florida bay, gulf stream, inshore, backcountry, offshore, reef, tarpon, sailfish, bonefish, snook, permit, redfish, trout, mahi-mahi, dorado, dolphin, grouper, snapper, hogfish, barracuda, sharks, everglades, sandbar, flats, alligator lighthouse, cape sable"
+}
+
 export default function HomePage() {
-  useEffect(() => {
-    import('preline')
-
-    const cards = document.querySelectorAll('.fade-in')
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            entry.target.classList.toggle('show', entry.isIntersecting)
-            if (entry.isIntersecting) {
-                observer.unobserve(entry.target)
-            }
-        })
-    },
-    {
-        threshold: .25,
-    }
-    )
-
-    cards.forEach(card => {
-        observer.observe(card)
-    })
-  }, [])
 
   return (
     <>
-      <head>
-        <title>Islamorada Fishing Guides & Charters | Florida Keys</title>
-        <link rel="icon" href="/images/tan-favicon.png"/>
-      </head>
+      <Observer />
       <div className="mx-auto max-w-7xl pt-4 md:pt-24 animate__animated animate__fadeIn">
         <Hero />
         <CharterTypes />
