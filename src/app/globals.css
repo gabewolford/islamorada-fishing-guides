@@ -32,13 +32,11 @@
 @tailwind components;
 @tailwind utilities;
 
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     color: #073050;
-    font-family: 'apercu-regular-pro', 'Inter', sans-serif;
 }
 
 .bold {

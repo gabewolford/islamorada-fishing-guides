@@ -8,6 +8,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['apercu-regular-pro', 'sans-serif'],
+      },
       colors: {
         cyan: {
           420: '#136F8C',
