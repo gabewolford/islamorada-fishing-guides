@@ -1,11 +1,9 @@
-'use client'
-
 import './globals.css'
 import localFont from 'next/font/local'
-import { useEffect } from 'react'
 import { Analytics } from '@vercel/analytics/react'
 import Navbar from './components/Navbar/navbar'
 import Footer from './components/Footer/footer'
+import Observer from './components/utils/Observer'
 
 const apercu = localFont({
   src: [
@@ -28,31 +26,20 @@ const apercu = localFont({
   ],
 })
 
-export default function RootLayout({ children }) {
-  useEffect(() => {
-    import('preline')
-    
-    const cards = document.querySelectorAll('.fade-in')
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            entry.target.classList.toggle('show', entry.isIntersecting)
-            if (entry.isIntersecting) {
-                observer.unobserve(entry.target)
-            }
-        })
-    },
-    {
-        threshold: .25,
-    }
-    )
+export const metadata = {
+  title: "Islamorada Fishing Guides & Charters | Florida Keys",
+  icons: {
+    icon: "/images/tan-favicon.png"
+  },
+  description: "Experience the ultimate Florida Keys fishing adventure. Fish with the experts of Islamorada in the backcountry waters of the Florida Bay or the offshore blue waters of the Gulf Stream.",
+  keywords: "florida keys, islamorada, florida, fishing, sport fishing, sportfishing, guides, charters, fishing charters, fishing guides, tours, florida bay, gulf stream, inshore, backcountry, offshore, reef, tarpon, sailfish, bonefish, snook, permit, redfish, trout, mahi-mahi, dorado, dolphin, grouper, snapper, hogfish, barracuda, sharks, everglades, sandbar, flats, alligator lighthouse, cape sable"
+}
 
-    cards.forEach(card => {
-        observer.observe(card)
-    })
-  }, [])
+export default function RootLayout({ children }) {
 
   return (
     <html lang="en" className={apercu.className}>
+      <Observer />
       <body>
         <Navbar />
         {children}
