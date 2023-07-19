@@ -18,12 +18,12 @@ export default function HomePage() {
   return (
     <>
       <Observer />
-      <div className="mx-auto max-w-7xl pt-4 md:pt-24 animate__animated animate__fadeIn">
+      <main className="mx-auto max-w-7xl pt-4 md:pt-24 animate__animated animate__fadeIn">
         <Hero />
         <CharterTypes />
         <PhotoLeftCard />
         <PhotoRightCard />
-      </div>
+      </main>
     </>
   )
 }

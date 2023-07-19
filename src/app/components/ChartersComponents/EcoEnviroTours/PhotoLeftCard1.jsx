@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function PhotoLeftCard1() {
     return (
-        <div className="fade-in show flex flex-col md:flex-row items-center gap-6 lg:gap-28 order-1 mb-16">
+        <section className="fade-in show flex flex-col md:flex-row items-center gap-6 lg:gap-28 order-1 mb-16">
             <img className="md:w-1/2" src="/images/everglades.png" alt="Everglades Image" />
             <div className="flex flex-col items-start lg:mr-20">
                 <h4 className="text-2xl md:text-3xl medium leading-7 mb-4 ">Florida Bay & The Everglades</h4>
@@ -12,6 +12,6 @@ export default function PhotoLeftCard1() {
                 <p className="text-xs mb-6">Rates vary depending on the boat and number of people.</p>
                 <Link href="/contact" className="text-white medium bg-cyan-420 hover:bg-cyan-hover transition duration-300 ease-in-out rounded-3xl px-5 py-3.5 w-fit">Book A Charter</Link>
             </div>
-        </div>
+        </section>
     )
 }
