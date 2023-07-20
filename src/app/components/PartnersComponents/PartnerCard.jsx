@@ -1,11 +1,11 @@
-import Link from "next/link"
+import Link from "next/link";
 
 export default function PartnerCard({ partnerData }) {
-    let partnerName, partnerPhoto, partnerURL
+    let partnerName, partnerPhoto, partnerURL;
     if (partnerData) {
-        partnerName = <h3 className="text-sm text-center bold mt-2">{partnerData.name}</h3>
-        partnerPhoto = partnerData.image
-        partnerURL = partnerData.url
+        partnerName = <h3 className="text-sm text-center bold mt-2">{partnerData.name}</h3>;
+        partnerPhoto = <img src={partnerData.imageUrl} alt={partnerData.name} className="mx-auto w-full" />;
+        partnerURL = partnerData.url;
     }
 
     return (
@@ -16,9 +16,9 @@ export default function PartnerCard({ partnerData }) {
                 rel="noreferrer"
                 className="p-4 hover-grow"
             >
-                <img src={partnerPhoto} alt={partnerName} className="mx-auto w-full"/>
+                {partnerPhoto}
                 {partnerName}
             </Link>
         </>
-    )
+    );
 }
