@@ -14,7 +14,7 @@ const client = createClient({
 
 async function fetchPartners() {
   try {
-    const partnersQuery = `*[_type == "partner"]`;
+    const partnersQuery = `*[_type == "partner"]{name, url, "imageUrl": image.asset->url} | order(name asc)`;
     const data = await client.fetch(partnersQuery);
     return data;
   } catch (error) {
