@@ -1,14 +1,11 @@
-'use client'
-
 import Link from "next/link"
 
 export default function GuideCard({ guideData }) {
 
-    
     let guideName, guidePhoto, badges
     if (guideData) {
-        guideName = <h3 className="text-md mt-2 text-center bold">Capt. {guideData.name}</h3>
-        guidePhoto = guideData.featured_pic
+        guideName = <h3 className="text-md mt-2 text-center bold">Capt. {guideData.first_name}&nbsp;{guideData.last_name}</h3>
+        guidePhoto = <img src={guideData.imageUrl} alt={guideData.first_name + ' ' + guideData.last_name} />
         if (guideData.backcountry === true && guideData.offshore === true) {
             badges = <h5 className="text-center">
                         <span className="text-center text-xs bg-offshore-420 text-white px-2 mr-1 py-1 rounded-full">Offshore</span> 
@@ -30,9 +27,9 @@ export default function GuideCard({ guideData }) {
             href={`/guides/${guideData.slug}`}
             className="p-4 hover-grow"
         >
-            <img src={guidePhoto} alt={guideData.name}/>
-                {guideName}
-                {badges}
+            {guidePhoto}
+            {guideName}
+            {badges}
         </Link>
     )
 }
