@@ -26,6 +26,7 @@
     font-style: normal;
 }
 
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -42,7 +43,7 @@
 }
 
 .medium {
-    font-family: 'apercu-medium-pro' sans-serif;
+    font-family: 'apercu-medium-pro', sans-serif;
 }
 
 body {
@@ -65,11 +66,11 @@ body {
 .fade-in {
     opacity: 0;
     transition: 700ms;
-}
+  }
   
-.fade-in.show {
-opacity: 1;
-}
+  .fade-in.show {
+    opacity: 1;
+  }
 
 @media only screen and (min-width: 300px) {
     body {
