@@ -20,7 +20,6 @@ export default function PhoneInput() {
 
     const handleInputChange = (e) => {
         formatPhoneNumber(e.target.value);
-        console.log(e.target.value)
     };
 
   
