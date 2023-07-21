@@ -63,7 +63,9 @@ export default function GetGuideDetails() {
           ))}
         </>
       ) : (
-        <Spinner />
+        <div className="flex flex-row justify-around">
+          <Spinner />
+        </div>
       )}
     </>
   );

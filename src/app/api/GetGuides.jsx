@@ -4,6 +4,7 @@ import { createClient } from "next-sanity";
 import { projectId, dataset, apiVersion, useCdn } from "../../../sanity/env";
 import { useState, useEffect } from "react";
 import GuideCard from "../components/GuidesComponents/GuideCard"
+import Spinner from "../components/utils/Spinner";
 
 const client = createClient({
   projectId: projectId,
@@ -25,7 +26,6 @@ async function fetchGuides() {
 
 export default function GetGuides() {
   const [guides, setGuides] = useState([]); 
-  const [detailPage, setDetailPage] = useState();
 
   useEffect(() => {
     async function fetchData() {
@@ -35,15 +35,22 @@ export default function GetGuides() {
     fetchData();
   }, []);
 
-    let guidesList = <h3>Loading guides...</h3>
-    if (guides.length > 0) {
-      guidesList = guides
-        .map((guide, i) => <GuideCard key={i} guideData={guide} />)
-    }
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 justify-center">
-      {guidesList}
-    </div>
+    <>
+      {guides.length > 0 ? (
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 lg:gap-14 justify-center">
+          {guides.map((guide, i) => (
+            <div key={i}>
+              <GuideCard key={i} guideData={guide} />
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div className="flex flex-row justify-around">
+          <Spinner />
+        </div>
+      )}
+    </>
   )
 }
