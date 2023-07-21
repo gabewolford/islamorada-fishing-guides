@@ -4,6 +4,7 @@ import { createClient } from "next-sanity";
 import { projectId, dataset, apiVersion, useCdn } from "../../../sanity/env";
 import { useState, useEffect } from "react";
 import PartnerCard from "../components/PartnersComponents/PartnerCard"
+import Spinner from "../components/utils/Spinner";
 
 const client = createClient({
   projectId: projectId,
@@ -34,15 +35,21 @@ export default function GetPartners() {
     fetchData();
   }, []);
 
-    let partnersList = <h3>Loading partners...</h3>
-    if (partners.length > 0) {
-      partnersList = partners
-        .map((partner, i) => <PartnerCard key={i} partnerData={partner} />)
-    }
-
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 justify-center">
-      {partnersList}
-    </div>
+    <>
+      {partners.length > 0 ? (
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-12 lg:gap-16 justify-center">
+          {partners.map((partner, i) => (
+            <div key={i}>
+              <PartnerCard key={i} partnerData={partner} />
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div className="flex flex-row justify-around">
+          <Spinner />
+        </div>
+      )}
+    </>
   )
 }
