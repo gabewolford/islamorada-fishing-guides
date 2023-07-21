@@ -4,10 +4,16 @@ export default {
     type: 'document',
     fields: [
         {
-            name: 'name',
-            title: 'Name',
+            name: 'first_name',
+            title: 'First Name',
             type: 'string',
-            description: 'The first and last name of the guide',
+            description: 'The first of the guide',
+        },
+        {
+            name: 'last_name',
+            title: 'Last Name',
+            type: 'string',
+            description: 'The last name of the guide',
         },
         {
             name: 'slug',
