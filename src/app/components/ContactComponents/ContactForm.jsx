@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef } from "react";
-import { redirect } from 'next/navigation'
+import { useRouter } from 'next/navigation';
 import PhoneInput from "../ContactComponents/PhoneInput"
 import emailjs from "@emailjs/browser";
 
@@ -21,6 +21,8 @@ export default function ContactForm() {
     const formattedDate = `${year}-${month}-${day}`;
 
     const form = useRef();
+    const router = useRouter();
+
     const sendEmail = (e) => {
         e.preventDefault();
     
@@ -32,7 +34,7 @@ export default function ContactForm() {
           });
 
         e.target.reset()
-        redirect('/contact/confirmation');
+        router.push('/contact/confirmation');
       };
 
     return (
