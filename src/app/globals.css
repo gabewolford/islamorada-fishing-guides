@@ -26,7 +26,6 @@
     font-style: normal;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -40,11 +39,11 @@
 }
 
 .bold {
-    font-family: 'apercu-bold-pro', 'Inter', sans-serif;
+    font-family: 'apercu-bold-pro', sans-serif;
 }
 
 .medium {
-    font-family: 'apercu-medium-pro', 'Inter', sans-serif;
+    font-family: 'apercu-medium-pro', sans-serif;
 }
 
 body {

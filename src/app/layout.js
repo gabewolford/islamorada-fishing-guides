@@ -12,7 +12,6 @@ const apercu = localFont({
       path: './fonts/apercu-regular-pro.woff2',
       weight: '400',
       style: 'normal',
-      variable: '--font-apercu'
     },
     {
       path: './fonts/apercu-medium-pro.woff2',

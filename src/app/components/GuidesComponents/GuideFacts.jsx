@@ -1,7 +1,3 @@
-'use client'
-
-import Link from "next/link"
-
 export default function GuideFacts({ guideData }) {
     let guideAboutMe, guideBoats, guideDock, guideSpecialty, guideFunFact, guideDaysOff, guidePhoto, guideName, boatHeading
     if (guideData) {
@@ -14,7 +10,7 @@ export default function GuideFacts({ guideData }) {
         guideSpecialty = guideData.specialty
         guideFunFact = guideData.fun_fact
         guideDaysOff = guideData.days_off
-        guidePhoto = '..' + guideData.featured_pic
+        guidePhoto = guideData.imageUrl
         guideName = guideData.name
         if (guideData.boats.length > 1) {
             boatHeading = <h6 className="bold">Boats</h6>

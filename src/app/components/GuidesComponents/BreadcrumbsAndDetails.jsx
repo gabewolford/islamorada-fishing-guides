@@ -2,9 +2,8 @@ import Link from "next/link"
 
 export default function BreadcrumbsAndDetails({ guideData }) {
     let captainName, businessName, guideType
-    let page
     if (guideData) {
-        captainName = guideData.name
+        captainName = guideData.first_name + ' ' + guideData.last_name
         businessName = guideData.business_name
         if (guideData.backcountry && guideData.offshore) {
             guideType = 'Backcountry & Offshore Guide'
