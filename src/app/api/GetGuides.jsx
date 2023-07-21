@@ -39,7 +39,7 @@ export default function GetGuides() {
   return (
     <>
       {guides.length > 0 ? (
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 justify-center">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 lg:gap-14 justify-center">
           {guides.map((guide, i) => (
             <div key={i}>
               <GuideCard key={i} guideData={guide} />
