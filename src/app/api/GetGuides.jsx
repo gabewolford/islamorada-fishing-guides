@@ -14,7 +14,7 @@ const client = createClient({
 
 async function fetchGuides() {
   try {
-    const guidesQuery  = `*[_type == "guide"]{first_name, last_name, slug, "imageUrl": featured_pic.asset->url, backcountry, offshore, business_name, about_me, boats, dock, specialty, fun_fact, days_off} | order(last_name asc)`;
+    const guidesQuery  = `*[_type == "guide"]{first_name, last_name, slug, "imageUrl": featured_pic.asset->url, backcountry, offshore} | order(last_name asc)`;
     const data = await client.fetch(guidesQuery);
     return data;
   } catch (error) {
@@ -38,7 +38,7 @@ export default function GetGuides() {
     let guidesList = <h3>Loading guides...</h3>
     if (guides.length > 0) {
       guidesList = guides
-        .map((guide, i) => <GuideCard key={i} guideData={guide} setDetailPage={setDetailPage}/>)
+        .map((guide, i) => <GuideCard key={i} guideData={guide} />)
     }
 
   return (
