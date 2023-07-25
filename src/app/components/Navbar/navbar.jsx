@@ -9,7 +9,7 @@ import localFont from 'next/font/local'
 const apercu = localFont({
     src: [
       {
-        path: './fonts/apercu-medium-pro.woff2',
+        path: '../../fonts/apercu-medium-pro.woff2',
         weight: '500',
         style: 'normal',
       },
