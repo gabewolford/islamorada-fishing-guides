@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { apercuBold, apercuMedium } from '../../styles/fonts'
 
 export default function PhotoLeftCard() {
 
@@ -7,16 +8,16 @@ export default function PhotoLeftCard() {
             <div className="fade-in show flex flex-col md:flex-row items-center gap-6 lg:gap-28 order-1 mb-0 md:mb-16">
                 <img className="md:w-1/2" src="/images/wws-image-home.png" alt="World Wide Sportsman aerial view" />
                 <div className="flex flex-col items-start lg:mr-20">
-                    <h4 className="text-2xl md:text-3xl medium leading-7 mb-4 ">Meet us at World Wide Sportsman</h4>
+                    <h4 className={`text-2xl md:text-3xl leading-7 mb-4 ${apercuMedium.className}`}>Meet us at World Wide Sportsman</h4>
                     <p className="text-sm md:text-base mb-2">Islamorada Fishing Guides & Charters will depart from the Worldwide Sportsman Bayside Marina on your day of charter. We charter out of the finest full service marina facilities in the Florida Keys for our customers.</p>
                     <p className="text-sm md:text-base mb-4">Before your trip, you can shop in the store for all your fishing needs. Relax at the Zane Grey Lounge or have a bite to eat the Islamorada Fish Company when you return from your day of fishing.</p>
-                    <p className="text-base md:text-lg bold mb-1">Departure point:</p>
+                    <p className={`text-base md:text-lg mb-1 ${apercuBold.className}`}>Departure point:</p>
                     <p className="text-base md:text-lg">81576 Overseas Hwy</p>
                     <p className="text-base md:text-lg mb-4">Islamorada, FL 33036</p>
                     <Link 
                     href="https://goo.gl/maps/cnpM2RB43WTB36Lz6?coh=178573&entry=tt" 
                     target="_blank" 
-                    className="text-white medium bg-cyan-420 hover:bg-cyan-hover transition duration-300 ease-in-out rounded-3xl px-5 py-3.5 w-fit mb-8"
+                    className={`text-white bg-cyan-420 hover:bg-cyan-hover transition duration-300 ease-in-out rounded-3xl px-5 py-3.5 w-fit mb-8 ${apercuMedium.className}`}
                     >
                         Directions
                     </Link>

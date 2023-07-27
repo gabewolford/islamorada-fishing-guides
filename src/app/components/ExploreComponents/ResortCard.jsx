@@ -1,10 +1,11 @@
 import Link from "next/link"
 import Observer from "../utils/Observer"
+import { apercuBold } from "../../styles/fonts"
 
 export default function ResortCard({ resortData }) {
     let resortName, resortPhoto, resortURL, resortBlurb, resortLogo
     if (resortData) {
-        resortName = <h3 className="bold">{resortData.name}</h3>
+        resortName = <h3 className={apercuBold.className}>{resortData.name}</h3>
         resortBlurb = <p>{resortData.blurb}</p>
         resortPhoto = <img src={resortData.mainImageUrl} alt={resortData.name} />
         resortURL = resortData.url

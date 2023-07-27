@@ -4,6 +4,7 @@ import { createClient } from "next-sanity";
 import { projectId, dataset, apiVersion, useCdn } from "../../../sanity/env";
 import { useState, useEffect } from "react";
 import ResortCard from "../components/ExploreComponents/ResortCard"
+import { apercuBold } from "../styles/fonts";
 
 const client = createClient({
   projectId: projectId,
@@ -42,7 +43,7 @@ export default function GetResorts() {
 
   return (
     <>
-      <h3 className="text-2xl md:text-3xl bold mb-8">Where to stay</h3>
+      <h3 className={`text-2xl md:text-3xl ${apercuBold.className} mb-8`}>Where to stay</h3>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-x-5 gap-y-10 md:gap-y-16 justify-center">
           {resortsList}
       </div>

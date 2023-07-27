@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { apercuBold } from "../../styles/fonts"
 
 export default function Breadcrumbs() {
     return (
@@ -6,7 +7,7 @@ export default function Breadcrumbs() {
             <p className="text-sm">
                 <Link href="/" className="hover:text-cyan-hover">Home</Link> / Explore Islamorada
             </p>
-            <h1 className="text-3xl lg:text-5xl bold">Explore Islamorada</h1>
+            <h1 className={`text-3xl lg:text-5xl ${apercuBold.className}`}>Explore Islamorada</h1>
         </div>
     )
 }
