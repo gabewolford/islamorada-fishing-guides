@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import Spinner from "../utils/Spinner"
 import PhoneInput from "../ContactComponents/PhoneInput"
 import emailjs from "@emailjs/browser";
+import { apercuBold, apercuMedium } from "../../styles/fonts";
 
 export default function ContactForm() { 
     const [isLoading, setIsLoading] = useState(false);
@@ -47,7 +48,7 @@ export default function ContactForm() {
         <>
             {!isLoading && (
             <div className="mx-auto w-full md:w-3/4 lg:w-1/2">
-                <p className="mb-6 text-center">To inquire about booking a charter, please fill out the form below. If you prefer to give us a call, our number is <span className="bold">305-304-7484</span>. Thank you!</p>
+                <p className="mb-6 text-center">To inquire about booking a charter, please fill out the form below. If you prefer to give us a call, our number is <span className={apercuBold.className}>305-304-7484</span>. Thank you!</p>
                 <h6 className="flex justify-end text-xs">* required</h6>
                 <form ref={form} onSubmit={sendEmail} className="grid gap-6 grid-cols-1 md:grid-cols-2">
 
@@ -133,7 +134,7 @@ export default function ContactForm() {
                         <button
                             type="submit" 
                             value="Send" 
-                            className="text-white medium bg-cyan-666 hover:bg-cyan-hover transition duration-300 ease-in-out rounded-3xl px-5 py-3.5"
+                            className={`text-white bg-cyan-666 hover:bg-cyan-hover transition duration-300 ease-in-out rounded-3xl px-5 py-3.5 ${apercuMedium.className}`}
                             >Send Message
                         </button>
                     </div>
