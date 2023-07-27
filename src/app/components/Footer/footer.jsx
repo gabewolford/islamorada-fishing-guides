@@ -1,5 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
+import { apercuMedium } from '../../../app/styles/fonts'
 
 export default function Footer() {
     return (
@@ -9,9 +10,9 @@ export default function Footer() {
                     <img className='h-[350px] w-full' src="/images/water.png" alt="Contact Us" />
                 </div>
                 <div className="absolute px-6 lg:px-44 flex flex-col text-center">
-                    <h4 className="text-2xl md:text-3xl text-white medium mb-4">Plan your custom fishing charter with our help.</h4>
+                    <h4 className={`text-2xl md:text-3xl text-white mb-4 ${apercuMedium.className}`}>Plan your custom fishing charter with our help.</h4>
                     <h5 className="text-base md:text-lg text-white mb-4">Not sure which charter or guide is right for you? Have questions? Talk with our experts who will help you plan and book your perfect Florida Keys fishing trip today!</h5>
-                    <Link href="/contact" className="text-cyan-420 medium bg-white hover:bg-cyan-hover hover:text-white transition duration-300 ease-in-out rounded-3xl px-5 py-3.5 block w-fit mx-auto">Contact Us</Link>
+                    <Link href="/contact" className={`${apercuMedium.className} text-cyan-420 bg-white hover:bg-cyan-hover hover:text-white transition duration-300 ease-in-out rounded-3xl px-5 py-3.5 block w-fit mx-auto`}>Contact Us</Link>
                 </div>
             </div>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 p-10 sm:px-6 lg:px-8">
