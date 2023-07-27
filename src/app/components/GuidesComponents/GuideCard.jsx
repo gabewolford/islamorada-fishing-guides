@@ -1,10 +1,11 @@
 import Link from "next/link"
+import { apercuBold } from "../../styles/fonts"
 
 export default function GuideCard({ guideData }) {
 
     let guideName, guidePhoto, badges
     if (guideData) {
-        guideName = <h3 className="text-md mt-2 text-center bold">Capt. {guideData.first_name}&nbsp;{guideData.last_name}</h3>
+        guideName = <h3 className={`text-md mt-2 text-center ${apercuBold.className}`}>Capt. {guideData.first_name}&nbsp;{guideData.last_name}</h3>
         guidePhoto = <img src={guideData.imageUrl} alt={guideData.first_name + ' ' + guideData.last_name} />
         if (guideData.backcountry === true && guideData.offshore === true) {
             badges = <h5 className="text-center">

@@ -1,3 +1,5 @@
+import { apercuBold } from "../../styles/fonts"
+
 export default function GuideFacts({ guideData }) {
     let guideAboutMe, guideBoats, guideDock, guideSpecialty, guideFunFact, guideDaysOff, guidePhoto, guideName, boatHeading
     if (guideData) {
@@ -13,9 +15,9 @@ export default function GuideFacts({ guideData }) {
         guidePhoto = guideData.imageUrl
         guideName = guideData.name
         if (guideData.boats.length > 1) {
-            boatHeading = <h6 className="bold">Boats</h6>
+            boatHeading = <h6 className={apercuBold.className}>Boats</h6>
         } else {
-            boatHeading = <h6 className="bold">Boat</h6>
+            boatHeading = <h6 className={apercuBold.className}>Boat</h6>
         }
     }
 
@@ -25,7 +27,7 @@ export default function GuideFacts({ guideData }) {
         <section className="flex flex-col lg:flex-row items-center gap-10 lg:gap-28">
             <div className="flex flex-col items-start gap-10 order-1 lg:order-0 lg:w-2/3">
                 <div className="flex flex-col items-start gap-2">
-                    <h5 className="bold text-lg">About me</h5>
+                    <h5 className={`text-lg ${apercuBold.className}`}>About me</h5>
                     <p className="text-lg">{guideAboutMe}</p>
                 </div>
                 <div className="flex flex-col lg:flex-row items-start gap-6">
@@ -36,24 +38,24 @@ export default function GuideFacts({ guideData }) {
                         </div>
 
                         <div className="flex flex-col items-start">
-                            <h6 className="bold">Dock</h6>
+                            <h6 className={apercuBold.className}>Dock</h6>
                             <p className="text-sm">{guideDock}</p>
                         </div>
 
                         <div className="flex flex-col items-start">
-                            <h6 className="bold">Specialty</h6>
+                            <h6 className={apercuBold.className}>Specialty</h6>
                             <p className="text-sm">{guideSpecialty}</p>
                         </div>
                     </div>
 
                     <div className="flex flex-col gap-6 lg:w-1/2">
                         <div className="flex flex-col items-start">
-                            <h6 className="bold">A fun fact...</h6>
+                            <h6 className={apercuBold.className}>A fun fact...</h6>
                             <p className="text-sm">{guideFunFact}</p>
                         </div>
 
                         <div className="flex flex-col items-start">
-                            <h6 className="bold">On my days off...</h6>
+                            <h6 className={apercuBold.className}>On my days off...</h6>
                             <p className="text-sm">{guideDaysOff}</p>
                         </div>
                     </div>

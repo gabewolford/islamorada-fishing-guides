@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { apercuBold } from "../../styles/fonts"
 
 export default function BreadcrumbsAndDetails({ guideData }) {
     let captainName, businessName, guideType
@@ -21,8 +22,8 @@ export default function BreadcrumbsAndDetails({ guideData }) {
                 <p className="text-sm"><Link href="/" className="hover:text-cyan-hover">Home</Link> / <Link href="/guides" className="hover:text-cyan-hover">Guides</Link> / {captainName}</p>
             </div>
             <div className="text-center mb-8">
-                {guideType && <h4 className="bold mb-3">{guideType}</h4>}
-                <h1 className="text-3xl lg:text-5xl bold mb-3">Capt. {captainName}</h1>
+                {guideType && <h4 className={`mb-3 ${apercuBold.className}`}>{guideType}</h4>}
+                <h1 className={`text-3xl lg:text-5xl mb-3 ${apercuBold.className}`}>Capt. {captainName}</h1>
                 {businessName && <h5>of {businessName}</h5>}
             </div>
         </>
