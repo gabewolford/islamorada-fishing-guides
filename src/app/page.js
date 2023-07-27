@@ -3,6 +3,7 @@ import Hero from './components/HomeComponents/Hero'
 import CharterTypes from './components/HomeComponents/CharterTypes'
 import PhotoLeftCard from './components/HomeComponents/PhotoLeftCard'
 import PhotoRightCard from './components/HomeComponents/PhotoRightCard'
+import 'animate.css'
 
 export const metadata = {
   title: "Islamorada Fishing Guides & Charters | Florida Keys",
