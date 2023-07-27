@@ -1,30 +1,10 @@
 import './globals.css'
-import localFont from 'next/font/local'
 import { Analytics } from '@vercel/analytics/react'
 import Navbar from './components/Navbar/navbar'
 import Footer from './components/Footer/footer'
 import Observer from './components/utils/Observer'
+import { apercuRegular } from '../app/styles/fonts'
 import 'animate.css'
-
-const apercu = localFont({
-  src: [
-    {
-      path: './fonts/apercu-regular-pro.woff2',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: './fonts/apercu-medium-pro.woff2',
-      weight: '500',
-      style: 'normal',
-    },
-    {
-      path: './fonts/apercu-bold-pro.woff2',
-      weight: '700',
-      style: 'normal',
-    },
-  ],
-})
 
 export const metadata = {
   title: "Islamorada Fishing Guides & Charters | Florida Keys",
@@ -38,7 +18,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
 
   return (
-    <html lang="en" className={apercu.className}>
+    <html lang="en" className={apercuRegular.className} >
       <Observer />
       <body>
         <Navbar />
