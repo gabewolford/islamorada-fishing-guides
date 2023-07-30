@@ -11,7 +11,7 @@ export default function PhotoLeftCard1() {
                 <p className="text-sm md:text-base mb-4">Only a one-hour boat ride from Islamorada to Flamingo Park, enjoy the serenity and beauty of the Florida Everglades which features more than 360 species of birds and over 150 species of reptiles and amphibians.</p>
                 <p className={`text-sm md:text-base mb-4 ${apercuBold.className}`}>Availability: Types of seasonal tours offered all year</p>
                 <p className="text-xs mb-6">Rates vary depending on the boat and number of people.</p>
-                <Link href="/contact" className="text-white medium bg-cyan-420 hover:bg-cyan-hover transition duration-300 ease-in-out rounded-3xl px-5 py-3.5 w-fit">Book A Charter</Link>
+                <Link href="/contact" className={`text-white bg-cyan-420 hover:bg-cyan-hover transition duration-300 ease-in-out rounded-3xl px-5 py-3.5 w-fit ${apercuMedium.className}`}>Book A Charter</Link>
             </div>
         </section>
     )
