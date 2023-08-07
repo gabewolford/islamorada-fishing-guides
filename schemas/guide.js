@@ -28,6 +28,23 @@ export default {
             description: 'The image of the guide',
         },
         {
+            name: 'gallery',
+            title: 'Gallery',
+            type: 'array',
+            of: [
+                { 
+                    type: 'image',
+                    options: {
+                        hotspot: true,
+                    }
+                },
+            ],
+            options: {
+                layout: 'list',
+                sortable: true,
+            }
+        },
+        {
             name: 'backcountry',
             title: 'Backcountry Guide',
             type: 'boolean',
