@@ -1,3 +1,4 @@
+import Footer from '../../components/Footer/footer'
 import Observer from "../../components/utils/Observer"
 import Breadcrumbs from "../../components/ChartersComponents/Offshore/Breadcrumbs"
 import PhotoLeftCard1 from "../../components/ChartersComponents/Offshore/PhotoLeftCard1"
@@ -26,6 +27,7 @@ export default function OffshorePage() {
                     <PhotoLeftCard3 />
                 </section>
             </main>
+            <Footer />
         </>
     )      
 }

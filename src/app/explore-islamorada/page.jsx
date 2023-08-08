@@ -1,6 +1,7 @@
 import Breadcrumbs from "../components/ExploreComponents/Breadcrumbs"
 import PhotoLeftCard from "../components/ExploreComponents/PhotoLeftCard"
 import GetResorts from "../api/GetResorts"
+import Footer from "../components/Footer/footer"
 
 export const metadata = {
   title: "Islamorada Fishing Guides | Explore Islamorada",
@@ -22,6 +23,7 @@ export default function ExploreIslamoradaPage() {
                 <GetResorts />
             </div>
         </div>
+        <Footer />
       </>
     )
 }

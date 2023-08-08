@@ -1,3 +1,4 @@
+import Footer from '../components/Footer/footer'
 import Observer from '../components/utils/Observer'
 import Breadcrumbs from '../components/ChartersComponents/AllCharters/Breadcrumbs'
 import PhotoLeftCard1 from '../components/ChartersComponents/AllCharters/PhotoLeftCard1'
@@ -18,7 +19,7 @@ export default function AllChartersPage() {
     return (
         <>
             <Observer />
-            <main className="mx-auto max-w-7xl pt-16 md:pt-24 pb-12 md:pb-0 animate__animated animate__fadeIn">
+            <main className="mx-auto max-w-7xl pt-16 md:pt-24 pb-12 md:pb-10 animate__animated animate__fadeIn">
                 <section className="mx-6 lg:mx-20 mb-0 md:mb-8">
                     <Breadcrumbs />
                     <PhotoLeftCard1 />
@@ -26,6 +27,7 @@ export default function AllChartersPage() {
                     <PhotoLeftCard3 />
                 </section>
             </main>
+            <Footer />
         </>
     )      
 }

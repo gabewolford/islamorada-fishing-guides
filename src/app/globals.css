@@ -12,6 +12,7 @@
 body {
     position: relative;
     min-height: 100dvh;
+    z-index: 40;
 }
 
 .boat-list-item {
@@ -29,20 +30,12 @@ body {
 .fade-in {
     opacity: 0;
     transition: 700ms;
-  }
-  
-  .fade-in.show {
+}
+
+.fade-in.show {
     opacity: 1;
+}
+
+.selected-thumbnail {
+    border: 2px solid #1989AD;
   }
-
-@media only screen and (min-width: 300px) {
-    body {
-        padding-bottom: 830px;
-    }
-}
-
-@media only screen and (min-width: 1028px) {
-    body {
-        padding-bottom: 650px;
-    }
-}

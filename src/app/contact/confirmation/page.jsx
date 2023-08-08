@@ -1,5 +1,6 @@
 import Breadcrumbs from "../../components/ContactComponents/Breadcrumbs"
 import { apercuMedium } from "../../styles/fonts"
+import Footer from "../../components/Footer/footer"
 
 export const metadata = {
     title: "Islamorada Fishing Guides | Contact Us",
@@ -23,6 +24,7 @@ export default function ContactConfirmationPage() {
                     </section>
                 </div>
             </main>
+            <Footer />
         </>
     )
 }

@@ -1,5 +1,6 @@
 import Breadcrumbs from "../components/GuidesComponents/Breadcrumbs"
 import GetGuides from '../api/GetGuides'
+import Footer from "../components/Footer/footer"
 
 export const metadata = {
   title: "Islamorada Fishing Guides | Our Guides",
@@ -12,11 +13,14 @@ export const metadata = {
 export default function GuidesPage() {
 
     return (
+      <>
           <div className="mx-auto max-w-7xl pt-16 md:pt-24 animate__animated animate__fadeIn">
-              <div className="mx-6 lg:mx-20 mb-16">
-                <Breadcrumbs />
-                <GetGuides />
-              </div>
+            <div className="mx-6 lg:mx-20 mb-16">
+              <Breadcrumbs />
+              <GetGuides />
+            </div>
           </div>
+          <Footer />
+      </>
     )
 }

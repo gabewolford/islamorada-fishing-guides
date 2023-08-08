@@ -30,7 +30,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="fixed flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full bg-white text-sm py-3 sm:py-0">
+      <header className="fixed flex flex-wrap sm:justify-start sm:flex-nowrap z-20 w-full bg-white text-sm py-3 sm:py-0">
         <nav className="relative w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between sm:px-6 lg:px-8" aria-label="Global">
           
           <div className="flex items-center justify-between">
