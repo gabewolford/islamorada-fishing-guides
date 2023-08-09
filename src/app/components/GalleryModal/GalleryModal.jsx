@@ -7,7 +7,6 @@ import { apercuMedium } from "../../styles/fonts";
 export default function GalleryModal({ onClose, guideData }) {
   const [thumbnails, setThumbnails] = useState()
   const [mainPhoto, setMainPhoto] = useState()
-  const [mainPhotoIndex, setMainPhotoIndex] = useState(0)
   const [galleryLength, setGalleryLength] = useState()
 
   useEffect(() => {
@@ -16,21 +15,22 @@ export default function GalleryModal({ onClose, guideData }) {
       // Set mainPhoto to the first image in the gallery
       setMainPhoto(
         <Image
-          src={guideData.gallery[0].url + '?fit=crop&crop=center&h=600&w=800'}
+          src={guideData.gallery[0].url + '?fit=crop&crop=center&h=450&w=600'}
           alt="main photo"
-          height={900}
-          width={900}
+          height={450}
+          width={600}
+          className="border border-red-400"
         />
       );
 
-      // Create thumbnails array with JSX elements
       const thumbnailElements = guideData.gallery.map((image, i) => (
         <button key={i} onClick={() => handleThumbnailClick(image.url)}>
           <Image
             src={image.url + '?fit=crop&crop=center&h=600&w=800'}
             alt={`Photo ${i}`}
-            height={40}
-            width={50}
+            height={900}
+            width={900}
+            className=""
           />
         </button>
       ));
@@ -43,10 +43,10 @@ export default function GalleryModal({ onClose, guideData }) {
     // Update mainPhoto state with JSX element using the clicked thumbnail image URL
     setMainPhoto(
       <Image
-        src={imageUrl + '?fit=crop&crop=center&h=600&w=800'}
+        src={imageUrl + '?fit=crop&crop=center&h=450&w=600'}
         alt="main photo"
-        height={900}
-        width={900}
+        height={450}
+        width={600}
       />
     );
   };
@@ -55,7 +55,7 @@ export default function GalleryModal({ onClose, guideData }) {
 
     <div className="fixed top-0 right-0 bottom-0 left-0 z-[1000] flex flex-col">
         
-        <div className="flex flex-col h-full w-full items-center bg-white p-4 md:p-8">
+        <div className="flex flex-col h-screen w-full items-center bg-white p-4 md:p-8">
 
           <div className="flex flex-col h-full w-full items-center gap-6 max-w-[1280px] max-h-screen justify-between">
             
@@ -77,7 +77,7 @@ export default function GalleryModal({ onClose, guideData }) {
               </div>
             </div >
 
-            <div className="flex justify-center lg:w-2/3 lg:h-fit">
+            <div className="flex flex-row justify-center lg:h-[450px] lg:max-w-2/3">
               {mainPhoto}
             </div>
 
