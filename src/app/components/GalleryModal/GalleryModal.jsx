@@ -19,7 +19,6 @@ export default function GalleryModal({ onClose, guideData }) {
           alt="main photo"
           height={450}
           width={600}
-          className="border border-red-400"
         />
       );
 
@@ -40,7 +39,6 @@ export default function GalleryModal({ onClose, guideData }) {
   }, [guideData]);
 
   const handleThumbnailClick = (imageUrl) => {
-    // Update mainPhoto state with JSX element using the clicked thumbnail image URL
     setMainPhoto(
       <Image
         src={imageUrl + '?fit=crop&crop=center&h=450&w=600'}
