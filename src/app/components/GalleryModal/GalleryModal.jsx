@@ -77,7 +77,7 @@ export default function GalleryModal({ onClose, guideData }) {
         
         <div className="flex flex-col h-screen w-full items-center bg-white p-4 md:p-8">
 
-          <div className="flex flex-col h-full w-full items-center gap-6 max-w-[1280px] max-h-screen justify-between">
+          <div className="flex flex-col h-[100dvh] w-full items-center gap-6 max-w-[1280px] max-h-screen justify-between">
             
             <div className="flex w-full justify-between">
               <button className="flex items-center gap-1" onClick={onClose}>
