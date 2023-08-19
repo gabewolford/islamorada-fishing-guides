@@ -69,10 +69,10 @@ export default function GalleryModal({ onClose, guideData }) {
               </div>
             </div >
 
-            <div className="flex flex-row relative justify-around items-center w-full space-x-4">
+            <div className="flex flex-row relative justify-around items-center w-full">
 
               <button
-                className=" top-1/2 transform -translate-y-1/2 border border-cyan-777 rounded-full p-2 hidden md:block"
+                className=" top-1/2 transform -translate-y-1/2 border border-cyan-777 rounded-full p-2 md:mr-4 hidden md:block"
                 onClick={handlePreviousClick}
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none">
@@ -97,7 +97,7 @@ export default function GalleryModal({ onClose, guideData }) {
               </div>
 
               <button
-                className="top-1/2 transform -translate-y-1/2 border border-cyan-777 rounded-full p-2 hidden md:block"
+                className="top-1/2 transform -translate-y-1/2 border border-cyan-777 rounded-full p-2 md:ml-4 hidden md:block"
                 onClick={handleNextClick}
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none">
@@ -107,8 +107,12 @@ export default function GalleryModal({ onClose, guideData }) {
 
           </div>
 
-            <div className="flex flex-row space-x-4 justify-center w-full mx-auto">
+            <div className="hidden md:flex md:flex-row space-x-4 justify-center w-full mx-auto">
               {thumbnails}
+            </div>
+
+            <div className="flex w-full md:hidden">
+              
             </div>
 
           </div>
