@@ -1,13 +1,16 @@
 'use client'
 
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { apercuMedium } from "../../styles/fonts";
 
 export default function GalleryModal({ onClose, guideData }) {
   const [thumbnails, setThumbnails] = useState([]);
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
   const galleryLength = guideData?.gallery.length || 0;
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+  const carouselRef = useRef(null);
 
   useEffect(() => {
     if (guideData) {
@@ -40,7 +43,32 @@ export default function GalleryModal({ onClose, guideData }) {
   const handleNextClick = () => {
     setCurrentPhotoIndex((prevIndex) =>
       prevIndex === galleryLength - 1 ? 0 : prevIndex + 1
-    );
+  );
+
+
+
+
+  const handleTouchStart = (e) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+  
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+  
+  const handleTouchEnd = () => {
+    if (touchStart - touchEnd > 50) {
+      // Swiped left, go to the next image
+      handleNextClick();
+    } else if (touchEnd - touchStart > 50) {
+      // Swiped right, go to the previous image
+      handlePreviousClick();
+    }
+  
+    // Reset touch positions
+    setTouchStart(0);
+    setTouchEnd(0);
+  };
   };
   
   return (
@@ -80,7 +108,7 @@ export default function GalleryModal({ onClose, guideData }) {
                 </svg>
               </button>
 
-              <div className="flex justify-center items-center">
+              <div className="flex justify-center items-center" ref={carouselRef}>
                 {guideData && (
                   <div className="lg:h-2/3 lg:w-auto mx-auto">
                     <Image
