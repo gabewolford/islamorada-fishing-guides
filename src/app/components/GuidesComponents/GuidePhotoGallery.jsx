@@ -20,10 +20,10 @@ export default function GuidePhotoGallery({ guideData }) {
 
   useEffect(() => {
     if (guideData) {
-      setGalleryLength(guideData.gallery.length)
+      setGalleryLength(guideData?.gallery?.length)
       setMainPhoto(    
         <Image
-          src={guideData.gallery[0].url + '?fit=crop&crop=center&h=417&w=548'}
+          src={guideData?.gallery[0]?.url + '?fit=crop&crop=center&h=417&w=548'}
           alt={`${guideData.name} main photo`}
           height={800}
           width={1000}
@@ -34,7 +34,7 @@ export default function GuidePhotoGallery({ guideData }) {
   
       setTopLeftPhoto(
         <Image
-          src={guideData.gallery[1].url + '?fit=crop&crop=center&h=196&w=259'}
+          src={guideData?.gallery[1]?.url + '?fit=crop&crop=center&h=196&w=259'}
           alt={`${guideData.name} top left photo`}
           height={196}
           width={259}
@@ -44,7 +44,7 @@ export default function GuidePhotoGallery({ guideData }) {
   
       setTopRightPhoto(  
         <Image
-          src={guideData.gallery[2].url + '?fit=crop&crop=center&h=196&w=259'}
+          src={guideData?.gallery[2]?.url + '?fit=crop&crop=center&h=196&w=259'}
           alt={`${guideData.name} top right photo`}
           height={196}
           width={259}
@@ -54,7 +54,7 @@ export default function GuidePhotoGallery({ guideData }) {
   
       setBottomLeftPhoto(
         <Image
-          src={guideData.gallery[3].url + '?fit=crop&crop=center&h=196&w=259'}
+          src={guideData?.gallery[3]?.url + '?fit=crop&crop=center&h=196&w=259'}
           alt={`${guideData.name} top right photo`}
           height={196}
           width={259}
@@ -63,7 +63,7 @@ export default function GuidePhotoGallery({ guideData }) {
       )
       setBottomRightPhoto(
         <Image
-          src={guideData.gallery[4].url + '?fit=crop&crop=center&h=196&w=259'}
+          src={guideData?.gallery[4]?.url + '?fit=crop&crop=center&h=196&w=259'}
           alt={`${guideData.name} top right photo`}
           height={196}
           width={259}
