@@ -13,6 +13,7 @@ module.exports = {
           420: '#136F8C',
           69: '#113C5D',
           666: '#073050',
+          777: '#1989AD',
           'hover': '#20ADDA'
         },
         offshore: {

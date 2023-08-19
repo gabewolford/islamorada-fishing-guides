@@ -4,6 +4,7 @@ import CharterTypes from './components/HomeComponents/CharterTypes'
 import PhotoLeftCard from './components/HomeComponents/PhotoLeftCard'
 import PhotoRightCard from './components/HomeComponents/PhotoRightCard'
 import 'animate.css'
+import Footer from './components/Footer/footer'
 
 export const metadata = {
   title: "Islamorada Fishing Guides & Charters | Florida Keys",
@@ -25,6 +26,7 @@ export default function HomePage() {
         <PhotoLeftCard />
         <PhotoRightCard />
       </main>
+      <Footer />
     </>
   )
 }

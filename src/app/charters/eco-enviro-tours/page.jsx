@@ -1,3 +1,4 @@
+import Footer from "../../components/Footer/footer"
 import Observer from "../../components/utils/Observer"
 import Breadcrumbs from "../../components/ChartersComponents/EcoEnviroTours/Breadcrumbs"
 import PhotoLeftCard1 from "../../components/ChartersComponents/EcoEnviroTours/PhotoLeftCard1"
@@ -26,6 +27,7 @@ export default function EcoEnviroToursPage() {
                     <PhotoLeftCard3 />
                 </section>
             </main>
+            <Footer />
         </>
     )      
 }

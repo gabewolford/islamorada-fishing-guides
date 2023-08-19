@@ -4,7 +4,7 @@ import { apercuMedium } from '../../../app/styles/fonts'
 
 export default function Footer() {
     return (
-        <footer className="w-full mx-auto bg-cyan-69 absolute bottom-0">
+        <footer className="w-full mx-auto bg-cyan-69">
             <div className="flex flex-col justify-center items-center gap-4">
                 <div className="relative w-full">
                     <img className='h-[350px] w-full' src="/images/water.png" alt="Contact Us" />

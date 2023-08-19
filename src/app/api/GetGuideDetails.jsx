@@ -7,6 +7,7 @@ import GuideFacts from "../components/GuidesComponents/GuideFacts";
 import BreadcrumbsAndDetails from "../components/GuidesComponents/BreadcrumbsAndDetails";
 import Spinner from "../components/utils/Spinner"
 import { useParams } from 'next/navigation';
+import GuidePhotoGallery from "../components/GuidesComponents/GuidePhotoGallery";
 
 const client = createClient({
   projectId: projectId,
@@ -28,7 +29,24 @@ export default function GetGuideDetails() {
       }
 
       try {
-        const guideDetailsQuery = `*[_type == "guide" && slug == '${slug}']{first_name, last_name, slug, "imageUrl": featured_pic.asset->url, backcountry, offshore, business_name, about_me, boats, dock, specialty, fun_fact, days_off} | order(last_name asc)`;
+        const guideDetailsQuery = `*[_type == "guide" && slug == '${slug}']{
+          first_name, 
+          last_name, 
+          slug, 
+          "imageUrl": featured_pic.asset->url, 
+          gallery[] {
+            'url': asset->url
+          }, 
+          backcountry, 
+          offshore, 
+          business_name, 
+          about_me, 
+          boats, 
+          dock, 
+          specialty, 
+          fun_fact, 
+          days_off} 
+          | order(last_name asc)`;
         const data = await client.fetch(guideDetailsQuery);
         setGuideDetails(data);
       } catch (error) {
@@ -58,6 +76,7 @@ export default function GetGuideDetails() {
           {guideDetails.map((guide, i) => (
             <div key={i}>
               <BreadcrumbsAndDetails guideData={guide} />
+              <GuidePhotoGallery guideData={guide} />
               <GuideFacts guideData={guide} />
             </div>
           ))}
