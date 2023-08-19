@@ -1,13 +1,16 @@
 'use client'
 
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { apercuMedium } from "../../styles/fonts";
 
 export default function GalleryModal({ onClose, guideData }) {
   const [thumbnails, setThumbnails] = useState([]);
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
   const galleryLength = guideData?.gallery.length || 0;
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+  const carouselRef = useRef(null);
 
   useEffect(() => {
     if (guideData) {
@@ -40,7 +43,32 @@ export default function GalleryModal({ onClose, guideData }) {
   const handleNextClick = () => {
     setCurrentPhotoIndex((prevIndex) =>
       prevIndex === galleryLength - 1 ? 0 : prevIndex + 1
-    );
+  );
+
+
+
+
+  const handleTouchStart = (e) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+  
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+  
+  const handleTouchEnd = () => {
+    if (touchStart - touchEnd > 50) {
+      // Swiped left, go to the next image
+      handleNextClick();
+    } else if (touchEnd - touchStart > 50) {
+      // Swiped right, go to the previous image
+      handlePreviousClick();
+    }
+  
+    // Reset touch positions
+    setTouchStart(0);
+    setTouchEnd(0);
+  };
   };
   
   return (
@@ -69,10 +97,10 @@ export default function GalleryModal({ onClose, guideData }) {
               </div>
             </div >
 
-            <div className="flex flex-row relative justify-around items-center w-full space-x-4">
+            <div className="flex flex-row relative justify-around items-center w-full">
 
               <button
-                className=" top-1/2 transform -translate-y-1/2 border border-cyan-777 rounded-full p-2 hidden md:block"
+                className=" top-1/2 transform -translate-y-1/2 border border-cyan-777 rounded-full p-2 md:mr-4 hidden md:block"
                 onClick={handlePreviousClick}
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none">
@@ -80,7 +108,7 @@ export default function GalleryModal({ onClose, guideData }) {
                 </svg>
               </button>
 
-              <div className="flex justify-center items-center">
+              <div className="flex justify-center items-center" ref={carouselRef}>
                 {guideData && (
                   <div className="lg:h-2/3 lg:w-auto mx-auto">
                     <Image
@@ -97,7 +125,7 @@ export default function GalleryModal({ onClose, guideData }) {
               </div>
 
               <button
-                className="top-1/2 transform -translate-y-1/2 border border-cyan-777 rounded-full p-2 hidden md:block"
+                className="top-1/2 transform -translate-y-1/2 border border-cyan-777 rounded-full p-2 md:ml-4 hidden md:block"
                 onClick={handleNextClick}
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none">
@@ -107,8 +135,12 @@ export default function GalleryModal({ onClose, guideData }) {
 
           </div>
 
-            <div className="flex flex-row space-x-4 justify-center w-full mx-auto">
+            <div className="hidden md:flex md:flex-row space-x-4 justify-center w-full mx-auto">
               {thumbnails}
+            </div>
+
+            <div className="flex w-full md:hidden">
+              
             </div>
 
           </div>
