@@ -34,19 +34,18 @@ export default function GalleryModal({ onClose, guideData }) {
     setCurrentPhotoIndex(index);
   };
 
+  const handleNextClick = () => {
+    setCurrentPhotoIndex((prevIndex) => (prevIndex + 1) % galleryLength);
+  };
+  
   const handlePreviousClick = () => {
     setCurrentPhotoIndex((prevIndex) =>
       prevIndex === 0 ? galleryLength - 1 : prevIndex - 1
     );
   };
 
-  const handleNextClick = () => {
-    setCurrentPhotoIndex((prevIndex) =>
-      prevIndex === galleryLength - 1 ? 0 : prevIndex + 1
-    );
-  };
-
   const handleTouchStart = (e) => {
+    e.stopPropagation();
     setTouchStart(e.targetTouches[0].clientX);
   };
   
@@ -55,14 +54,17 @@ export default function GalleryModal({ onClose, guideData }) {
   };
   
   const handleTouchEnd = () => {
-    const swipeThreshold = 20;
+    const swipeDistance = touchStart - touchEnd;
+    const swipeThreshold = 20; // Adjust this value to control swipe sensitivity
   
-    if (touchStart - touchEnd > swipeThreshold) {
-      // Swiped left, go to the next image
-      handleNextClick();
-    } else if (touchEnd - touchStart > swipeThreshold) {
-      // Swiped right, go to the previous image
-      handlePreviousClick();
+    if (Math.abs(swipeDistance) > swipeThreshold) {
+      if (swipeDistance > 0) {
+        // Swiped left, go to the next image
+        handleNextClick();
+      } else {
+        // Swiped right, go to the previous image
+        handlePreviousClick();
+      }
     }
   
     // Reset touch positions
@@ -117,9 +119,6 @@ export default function GalleryModal({ onClose, guideData }) {
                 {guideData && (
                 <div
                   className="lg:h-2/3 lg:w-auto mx-auto"
-                  onTouchStart={handleTouchStart}
-                  onTouchMove={handleTouchMove}
-                  onTouchEnd={handleTouchEnd}
               >
                     <Image
                       src={
