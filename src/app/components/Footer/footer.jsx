@@ -70,6 +70,7 @@ export default function Footer() {
                 </div>
                 <div className="col-span-full">
                     <p className="mt-3 text-xs text-muted-420">© 2023 Islamorada Fishing Guides & Charters</p>
+                    <p className="mt-3 text-xs text-muted-420">Designed by <a className="hover:text-white" href="https://smallhound.co" target="_blank">Small Hound.</a> Developed by <a className="hover:text-white" href="https://biiigstretch.studio" target="_blank">Biiig Stretch.</a></p>
                 </div>
             </div>
         </footer>
