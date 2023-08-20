@@ -43,10 +43,8 @@ export default function GalleryModal({ onClose, guideData }) {
   const handleNextClick = () => {
     setCurrentPhotoIndex((prevIndex) =>
       prevIndex === galleryLength - 1 ? 0 : prevIndex + 1
-  );
-
-
-
+    );
+  };
 
   const handleTouchStart = (e) => {
     setTouchStart(e.targetTouches[0].clientX);
@@ -69,13 +67,12 @@ export default function GalleryModal({ onClose, guideData }) {
     setTouchStart(0);
     setTouchEnd(0);
   };
-  };
   
   return (
 
     <div className="fixed top-0 right-0 bottom-0 left-0 z-[1000] flex flex-col">
         
-        <div className="flex flex-col h-screen w-full items-center bg-white p-4 md:p-8">
+        <div className="flex flex-col h-[100dvh] w-full items-center bg-white p-4 md:p-8">
 
           <div className="flex flex-col h-[100dvh] w-full items-center gap-6 max-w-[1280px] max-h-screen justify-between">
             
@@ -108,9 +105,20 @@ export default function GalleryModal({ onClose, guideData }) {
                 </svg>
               </button>
 
-              <div className="flex justify-center items-center" ref={carouselRef}>
+              <div
+                className="flex justify-center items-center"
+                ref={carouselRef}
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove}
+                onTouchEnd={handleTouchEnd}
+              >
                 {guideData && (
-                  <div className="lg:h-2/3 lg:w-auto mx-auto">
+                <div
+                  className="lg:h-2/3 lg:w-auto mx-auto"
+                  onTouchStart={handleTouchStart}
+                  onTouchMove={handleTouchMove}
+                  onTouchEnd={handleTouchEnd}
+              >
                     <Image
                       src={
                         guideData.gallery[currentPhotoIndex].url +
