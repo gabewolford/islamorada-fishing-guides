@@ -55,10 +55,12 @@ export default function GalleryModal({ onClose, guideData }) {
   };
   
   const handleTouchEnd = () => {
-    if (touchStart - touchEnd > 50) {
+    const swipeThreshold = 20;
+  
+    if (touchStart - touchEnd > swipeThreshold) {
       // Swiped left, go to the next image
       handleNextClick();
-    } else if (touchEnd - touchStart > 50) {
+    } else if (touchEnd - touchStart > swipeThreshold) {
       // Swiped right, go to the previous image
       handlePreviousClick();
     }
