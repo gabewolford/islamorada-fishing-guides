@@ -41,7 +41,7 @@ export default function Footer() {
                 </div>
                 <div className="col-span-full lg:col-span-1 grid space-y-3 text-sm">
                     <p><Link className="inline-flex gap-x-2 text-white hover:text-cyan-420" href="/contact">Contact Us</Link></p>
-                    <p className="inline-flex gap-x-2 !text-white">Call us today <span className="text-white bold">305-394-7484</span></p>
+                    <p className="inline-flex gap-x-2 text-white">Call us today <span className="!text-white bold">305-394-7484</span></p>
                     <p className="inline-flex gap-x-2 text-white"> 
                         <Link href="https://www.facebook.com/islamoradafishingguidesandcharters" target="_blank" className="mr-2">
                             <span>
