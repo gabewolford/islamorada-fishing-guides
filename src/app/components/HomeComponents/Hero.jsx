@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { apercuMedium } from '../../../app/styles/fonts'
+import heroImageHome from '../../../../public/images/hero-image-home.png'
 
 export default function Hero() {
     return (
@@ -8,13 +9,10 @@ export default function Hero() {
             <section className="flex flex-col-reverse md:flex-row items-center gap-6 order-1 mb-16 md:mx-6 lg:mx-20">
                 <div className="flex order-1 w-full md:w-1/2">
                     <Image
-                        src="/images/hero-image-home.png"
-                        height={700}
-                        width={700}
-                        style={{ width: '100%', height: 'auto' }}
-                        sizes="100vw"
+                        src={heroImageHome}
                         alt='Home hero image'
                         priority={true}
+                        placeholder='blur'
                     >
                     </Image>
                 </div>
