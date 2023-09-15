@@ -1,13 +1,21 @@
 import Link from 'next/link'
 import { apercuBold, apercuMedium } from '../../styles/fonts'
+import Image from 'next/image'
+import wwsImage from '../../../../public/images/wws-image-home.png'
 
 export default function PhotoLeftCard() {
 
     return (
         <>
             <div className="fade-in show flex flex-col md:flex-row items-center gap-6 lg:gap-28 order-1 mb-0 md:mb-16">
-                <img className="md:w-1/2" src="/images/wws-image-home.png" alt="World Wide Sportsman aerial view" />
-                <div className="flex flex-col items-start lg:mr-20">
+                <Image
+                    src={wwsImage}
+                    alt='World Wide Sportsman aerial view'
+                    className='md:w-1/2'
+                    placeholder='blur'
+                >
+                </Image>
+                <div className="flex flex-col items-start lg:mr-20 md:w-1/2">
                     <h4 className={`text-2xl md:text-3xl leading-7 mb-4 ${apercuMedium.className}`}>Meet us at World Wide Sportsman</h4>
                     <p className="text-sm md:text-base mb-2">Islamorada Fishing Guides & Charters will depart from the Worldwide Sportsman Bayside Marina on your day of charter. We charter out of the finest full service marina facilities in the Florida Keys for our customers.</p>
                     <p className="text-sm md:text-base mb-4">Before your trip, you can shop in the store for all your fishing needs. Relax at the Zane Grey Lounge or have a bite to eat the Islamorada Fish Company when you return from your day of fishing.</p>
