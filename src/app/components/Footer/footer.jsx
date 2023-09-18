@@ -1,13 +1,14 @@
 import Link from "next/link"
 import Image from "next/image"
 import { apercuMedium } from '../../../app/styles/fonts'
+import waterImage from '../../../../public/images/water.png'
 
 export default function Footer() {
     return (
         <footer className="w-full mx-auto bg-cyan-69">
             <div className="flex flex-col justify-center items-center gap-4">
                 <div className="relative w-full">
-                    <img className='h-[350px] w-full' src="/images/water.png" alt="Contact Us" />
+                    <Image src={waterImage} alt="Water image" className="h-[350px] w-full" />
                 </div>
                 <div className="absolute px-6 lg:px-44 flex flex-col text-center">
                     <h4 className={`text-2xl md:text-3xl text-white mb-4 ${apercuMedium.className}`}>Plan your custom fishing charter with our help.</h4>
@@ -52,7 +53,6 @@ export default function Footer() {
                                     width={32}
                                 >
                                 </Image>
-                                
                             </span>
                         </Link>
                         <Link href="https://www.instagram.com/islamoradafishingguides/" target="_blank">
